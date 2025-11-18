@@ -1,0 +1,53 @@
+:root {
+  /* Modern accent colors (subtle and trendy) */
+  --bg-primary: #00d4aa; /* Teal green for highlights */
+  --bg-secondary: #bb86fc; /* Purple for interactive elements */
+  --bg-tertiary: #666e6e; /* Cyan for borders or buttons */
+  --bg--fourth: #121212; /* Dark background for dark mode */
+  /* Text colors for contrast */
+  --text-primary: #ffffff; /* White for main text */
+  --text-secondary: #b3b3b3; /* Light gray for secondary text */
+}
+/* Apply to body for a full dark theme */
+body {
+  background: linear-gradient(90deg, var(--bg-primary) 0%, var(--bg-secondary) 120%);
+  color: var(--text-primary);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Modern font */
+  margin: 0;
+  padding: 0;
+}
+/* Example for a card or section with secondary background */
+.card {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--accent-tertiary);
+  border-radius: 8px;
+  padding: 20px;
+  color: var(--text-primary);
+}
+/* Example for a button with accent color */
+.button {
+  background: var(--accent-primary);
+  color: var(--bg-primary);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.3s ease; /* Smooth modern transition */
+}
+.button:hover {
+  background: var(--accent-secondary);
+}
+
+h1 {
+    color: var(--text-primary);
+    text-align: center;
+    margin-top: 20px;
+    font-size: 50px;
+
+}
+
+.App {
+    
+    text-align: center;
+    margin-top: 50px;
+}

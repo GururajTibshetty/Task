@@ -1,26 +1,45 @@
-import React from 'react'
+import { useState } from "react"
 
-export default function Taskform() {
+export default function Taskform({addTask}) {
+  const [task, setTask] = useState('');
+  const [priority, setPriority] = useState('medium');
+  const [category, setCategory] = useState('General');
+
+  const handlesubmit = (e) => {
+    e.preventDefault();
+    addTask({text: task, priority, category, completed: false});
+
+    //reset
+    setTask('');
+    setPriority("medium");
+    setCategory("General");
+  }
+
   return (
-    <form>
-        <div>
-            <input type="text" placeholder='Enter the task' />
-            <button type="submit">Add Task </button>
+      <form onSubmit={handlesubmit} className='task-form'> 
+        <div id="inp">
+          <input type='text' placeholder='Enter the task'
+           value={task}
+          onChange={(e)=> setTask(e.target.value)}/>
+          <button type="submit">Add task</button>
         </div>
 
-        <div>
-            <select name="priority" id="priority">
-                <option value="low">Low</option>
-                <option value="medium">Medium</option>
-                <option value="high">High</option>
-            </select>
-            
-            <select name="" id="">
-                <option value="Work">Work</option>
-                <option value="personal">personal</option>
-                <option value="General">General</option>
-            </select>
-        </div>  
-    </form>
+      <div id='btns'>
+      <select value={priority} onChange={(e)=> setPriority(e.target.value)}>
+        <option value="High">High</option>
+        <option value="Medium">Medium</option>
+        <option value="low">low</option>
+      </select>
+
+      <select value={category} onChange={(e)=>setCategory(e.target.value)}>
+        <option value="general">General</option>
+        <option value="work">work</option>
+        <option value="personal">personal</option>
+      </select>
+      </div>
+
+      {/* <h1>{task} {priority} {category}</h1> */}
+   </form>
+
   )
 }
