@@ -29,17 +29,22 @@ const [tasks, setTasks] = useState([]);
     setTasks(tasks.filter((_, i) => i !== index));
   }
 
+  const clearTask = () => {
+    setTasks([]);
+  };
+
   return (
     <div className="App">
     <header>
       <h1>Welcome to Task Manager</h1>
+      <p className="tagline">Manage your tasks efficiently</p>
     </header>
       <Taskform addTask={addTask} />
       <TaskList task={tasks} 
       updateTask={updateTask} 
       deleteTask={deleteTask} />
       <Progresstracker tasks={tasks} /> 
-      <button>clear all</button>
+      {tasks.length>0 && <button onClick={clearTask} className="clear-button"> clear all</button>}
      
     </div>
   )

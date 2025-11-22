@@ -11,8 +11,9 @@ export default function Progresstracker({ tasks }) {
         </p>
 
         <div className='progress-bar'>
-            <div className='progress' style={{ width: `${progressPercentage}%` }}></div>
-
+        <div className='progress' 
+            style={{ width: `${progressPercentage}%` }}>
+        </div>
         </div>
        
     </div>
